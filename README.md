@@ -166,7 +166,7 @@ The request of subscription is performed by calling the `subscribe` method. Forc
 ## Chatting: SEPA aggregators and the SEPA application design pattern
 The following diagram shows the sequence of operations involved during a chat.
 
-![Chat sequence diagram](https://github.com/arces-wot/SEPA-Tools/blob/master/img/Chat.jpg)
+![Chat sequence diagram](https://github.com/arces-wot/SEPA-Chat/blob/master/img/Chat.jpg)
 
 The `UserRegistration` and `Users` clients have been previously presented. The first is a *producer* (it performs SPARQL updates), while the second is a *consumer* (it is subscribed by means of a SPARQL query).
 A ChatClient can be seen as composed by three SEPA clients: `Sender`, `Receiver` and `Remover`. While the first is a *producer*, the last two are *aggregators*. 
