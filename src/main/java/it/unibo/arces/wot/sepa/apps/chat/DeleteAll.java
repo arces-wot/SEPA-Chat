@@ -16,7 +16,7 @@ public class DeleteAll extends Producer {
 	private static final Logger logger = LogManager.getLogger();
 	
 	public DeleteAll() throws SEPAProtocolException, SEPAPropertiesException, SEPASecurityException {
-		super(new JSAPProvider().getJsap(), "DELETE_ALL",new JSAPProvider().getSecurityManager());
+		super(new JSAPProvider().getJsap(), "DELETE_ALL");
 	}
 	
 	public void clean() {

@@ -7,6 +7,7 @@ import it.unibo.arces.wot.sepa.commons.exceptions.SEPASecurityException;
 import it.unibo.arces.wot.sepa.commons.response.ErrorResponse;
 import it.unibo.arces.wot.sepa.commons.sparql.Bindings;
 import it.unibo.arces.wot.sepa.commons.sparql.BindingsResults;
+import it.unibo.arces.wot.sepa.commons.sparql.RDFTermLiteral;
 import it.unibo.arces.wot.sepa.commons.sparql.RDFTermURI;
 
 class Remover extends ChatAggregator {	
@@ -31,7 +32,8 @@ class Remover extends ChatAggregator {
 			handler.onMessageSent(userUri,bindings.getValue("message"),bindings.getValue("time"));
 					
 			try {
-				this.setUpdateBindingValue("message", bindings.getRDFTerm("message"));
+				this.setUpdateBindingValue("sender", new RDFTermURI(userUri));
+				this.setUpdateBindingValue("time", new RDFTermLiteral(bindings.getValue("time")));
 				update();
 				
 			} catch (SEPASecurityException | SEPAProtocolException | SEPAPropertiesException | SEPABindingsException e) {

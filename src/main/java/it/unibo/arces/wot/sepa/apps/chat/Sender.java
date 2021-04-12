@@ -18,7 +18,7 @@ class Sender extends Producer {
 	
 	public Sender(String userUri,IMessageHandler handler)
 			throws SEPAProtocolException, SEPASecurityException, SEPAPropertiesException, SEPABindingsException {
-		super(new JSAPProvider().getJsap(), "SEND", new JSAPProvider().getSecurityManager());
+		super(new JSAPProvider().getJsap(), "SEND");
 
 		this.setUpdateBindingValue("sender", new RDFTermURI(userUri));
 		

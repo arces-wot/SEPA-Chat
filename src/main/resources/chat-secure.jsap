@@ -2,6 +2,18 @@
 	"host": "localhost",
 	"oauth": {
 		"enable": true,
+		"ssl": "TLSv1.2",
+		"registration": {
+			"endpoint": "https://192.168.1.13:8443/oauth/register",
+			"username": "sepachat"
+		},
+		"authentication": {
+			"endpoint": "https://192.168.1.13:8443/oauth/token"
+		},
+		"provider": "sepa"
+	},
+	"oauth_old": {
+		"enable": true,
 		"register": "https://localhost:8443/oauth/register",
 		"tokenRequest": "https://localhost:8443/oauth/token",
 		"client_id": "Jxo4sYqGc0pGKES4V3YY/Q==",
@@ -45,10 +57,10 @@
 		"messages": 1
 	},
 	"graphs": {
-		"default-graph-uri": "http://wot.arces.unibo.it/chat/",
-		"named-graph-uri": "http://wot.arces.unibo.it/chat/",
-		"using-graph-uri": "http://wot.arces.unibo.it/chat/",
-		"using-named-graph-uri": "http://wot.arces.unibo.it/chat/"
+		"default-graph-uri": ["http://wot.arces.unibo.it/chat/"],
+		"named-graph-uri": ["http://wot.arces.unibo.it/chat/"],
+		"using-graph-uri": ["http://wot.arces.unibo.it/chat/"],
+		"using-named-graph-uri": ["http://wot.arces.unibo.it/chat/"]
 	},
 	"namespaces": {
 		"schema": "http://schema.org/",
@@ -117,8 +129,7 @@
 				}
 			},
 			"graphs": {
-				"using-graph-uri": "http://wot.arces.unibo.it/chat/log",
-				"using-named-graph-uri": "http://wot.arces.unibo.it/chat/log"
+				"using-graph-uri": ["http://wot.arces.unibo.it/chat/log"]
 			}
 		},
 		"STORE_RECEIVED": {
@@ -135,8 +146,7 @@
 				}
 			},
 			"graphs": {
-				"using-graph-uri": "http://wot.arces.unibo.it/chat/log",
-				"using-named-graph-uri": "http://wot.arces.unibo.it/chat/log"
+				"using-graph-uri": ["http://wot.arces.unibo.it/chat/log"]
 			}
 		},
 		"REGISTER_USER": {
@@ -174,15 +184,13 @@
 		"LOG_SENT": {
 			"sparql": "SELECT ?message ?sender ?receiver ?text ?dateSent WHERE {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}",
 			"graphs": {
-				"default-graph-uri": "http://wot.arces.unibo.it/chat/log/",
-				"named-graph-uri": "http://wot.arces.unibo.it/chat/log/"
+				"default-graph-uri": ["http://wot.arces.unibo.it/chat/log/"]
 			}
 		},
 		"LOG_RECEIVED": {
 			"sparql": "SELECT ?message ?dateReceived WHERE {?message schema:dateReceived ?dateReceived}",
 			"graphs": {
-				"default-graph-uri": "http://wot.arces.unibo.it/chat/log/",
-				"named-graph-uri": "http://wot.arces.unibo.it/chat/log/"
+				"default-graph-uri": ["http://wot.arces.unibo.it/chat/log/"]
 			}
 		},
 		"USERS": {

@@ -1,41 +1,55 @@
 {
-	"host": "localhost",
+	"host": "arces143100.arces.unibo.it",
 	"oauth": {
-		"enable": false
+		"enable": true,
+		"ssl": "TLSv1.2",
+		"registration": {
+			"endpoint": "https://arces143100.arces.unibo.it:8443/auth/realms/sepa/clients-registrations/default",
+			"initialAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5YmY4NDZjMy0xZDQwLTRlYjctODJhNS0yNjhlZjYwODEyMjcifQ.eyJleHAiOjAsImlhdCI6MTYxNTU2NzQyNSwianRpIjoiN2RjZmU4NjktZDYyYi00ZjExLWFmMTEtZDlhNTc1ZTc2NzFhIiwiaXNzIjoiaHR0cHM6Ly9hcmNlczE0MzEwMC5hcmNlcy51bmliby5pdDo4NDQzL2F1dGgvcmVhbG1zL3N3YW1wIiwiYXVkIjoiaHR0cHM6Ly9hcmNlczE0MzEwMC5hcmNlcy51bmliby5pdDo4NDQzL2F1dGgvcmVhbG1zL3N3YW1wIiwidHlwIjoiSW5pdGlhbEFjY2Vzc1Rva2VuIn0.XdVfsoMPw_PVXBk1cNyZWBo9DtRydvwFzDsme0vBhUseyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5YmY4NDZjMy0xZDQwLTRlYjctODJhNS0yNjhlZjYwODEyMjcifQ.eyJleHAiOjAsImlhdCI6MTYxNTU2NzQyNSwianRpIjoiN2RjZmU4NjktZDYyYi00ZjExLWFmMTEtZDlhNTc1ZTc2NzFhIiwiaXNzIjoiaHR0cHM6Ly9hcmNlczE0MzEwMC5hcmNlcy51bmliby5pdDo4NDQzL2F1dGgvcmVhbG1zL3N3YW1wIiwiYXVkIjoiaHR0cHM6Ly9hcmNlczE0MzEwMC5hcmNlcy51bmliby5pdDo4NDQzL2F1dGgvcmVhbG1zL3N3YW1wIiwidHlwIjoiSW5pdGlhbEFjY2Vzc1Rva2VuIn0.XdVfsoMPw_PVXBk1cNyZWBo9DtRydvwFzDsme0vBhUs",
+			"username": "sepachat"
+		},
+		"authentication": {
+			"endpoint": "https://arces143100.arces.unibo.it:8443/auth/realms/sepa/protocol/openid-connect/token",
+			"client_id": "tlnpqpmL5GAoxCn/k+YEwQ==",
+			"client_secret": "1iESAnghkkWWipGJlCkjOGToKgfLjfrdeK1nqZlewopXftquvcutq0QRJGtP/+ba",
+			"jwt": "xabtQWoH8RJJk1FyKJ78J3jaFqpRDQjXEwGovBZ5+1k3fauyBMvMa0G6pVNKIgd3X8/QnOGAqsDwyDwwRyRHN05S3lwoPDTywhKaOZXCMBNnJPqpSaka84gJGfgC8ZM+W/W/gp1wTNu36ojD9hUpHhDekbWMQ3NJs1jaHY8QbYBvt5o30k/BI8Pfjh8BkFO7eyr2AhUeS/FGR6Q0JX5qcanY1TPzo53j+kl7/u52NsZynz6790ek5BOmbKrJ3805S+zZ7LOn98c5w7lqHOcL/sNzE2kvLqDx6qmQsPqKl0P06gewwGPl6gQeXSFyfomMFN3a65pjQyv1cuOZcwhbHseokPm53XYIyuLp7fWybnPEGIYsTTBMz8W5CWDFZPNgHHTMJcjHeQHjQJmxKwaqmKreQbjEYpC6fnmgwVSGVCX603ZYy9TgWuDapUoGvrqsLaGN+5yHnsBBI0g1Kc5UKpca/CZA/dDkOjte82HRz+6SnlSpHRPIu1+r9VFLgzAsgB6cVwoC25KiEnX207HcOQk3CBHxXhv9v3akyHqvrmiUWJJjM+Ed7fhxRkO1wK0l2oG78YxTurpl19e9+v4hT+qVtxnpsqcvk3LvgfkCtn5AHzwQbKgKV6YYRXIecBQ655Ow+DuJ0OJ+aJ0MdDhD9RUwedTNfEFG9A/W4Y2yz91hhP6cfMwbl0i8W15tRduGVYTIrX4x53+bKT7yh3q556OFNlCvTVrmvxSoJvmOYZiNc17+4z/McJSIzIbAhzjN6Wpe6BcU1iUzXgd170Us2zlqhsJ1BySUf58N6wBTzCQwRN652waqdCw8mOQ1J2FmD0z+ok3CZ9jKYUjDOKWFt+mOSNvF6Zpngg5BjPhUjC0yrOFzLYoZdX7REV/i3JEpHPKJE9hTfxovskjiHGPMcQL5X7NAGXZk0XkxXbecMatXXNQkwq+dq6zsHIPtlXrIEOQ16LooJ+HuRjFpr/e68WR2LSKRDf7xZuAaibdhKd886lh4FgseDWvb9Jib8wmaDhbebsFUW78XXPKxdJizg80y5UYkjOe13geqUldtKl11m0yjvffANBMEn7YqEg76vCQN3Vve9wjIa5ptiS5jZHISyldRWrLG+GMGMuO1yr3QiQMltREHniIGCbCd+x3XFT17srbBM8hYewzL/VSov4gUPXx0JxpVrbb5RH8fyvqkclIfAfZzJAaEa5Ya/1h21qGJVKWAM4lViHGlKXN0wCEvQOqtbp19EKOKL+ziWftJlVDByzw1nLRzlCHlzm1G0GHTN0jBeidmVeYKcKZPvbUU9GlqwLfWeb5OdqgFYJzWSN1vecffW+Wu47+tHaxhFXlcjlX7JjIdaOxUoPHjd0Xj5i45fHHWALFNKmvtzY1Eo4YpgKuy5XJmev/if83B63L2QtzOdB8eC+5YwJOf8F8TxPSanXFCHYOiXO0k4lFfy2JbXg+7xSJY1aM71NxRhShc/xVe7ssfKTaGQk/KchJnGK/BHK66W//dxsyRwPB5QBxASSL/wxmfug2aUpoosIcpy/criyq9Q+0fhTr+sKaOYav18hHmkqT6OFJgTt0EsR8GhyRSEpLZU3zzmiIeh1jMaHIbXcVua6t/hugZuDGagIXSOlC+3GFyzaidWTsJ/81QjjrwmNiRbiJKqriEmR0WO8Z6dPJXa4ExYjy0t/IFEpVx0GbHSYk7cHQCRXhJLX9qlJ07H+lj7T/MUfM35temt4PW6fmXiVMIklbjs91uTF2DQ/5vPvde9uE74KQ1vv44sUyN1Fjf8D+17bTmR2pdqV6/irCLZj9woQFduPLU85Ll48h5dl+Vuar/wZE=",
+			"expires": "N6U25WgCWgYCjzKSem9Kaw==",
+			"type": "XPrHEX2xHy+5IuXHPHigMw=="
+		},
+		"provider": "keycloak"
 	},
 	"sparql11protocol": {
-		"protocol": "http",
-		"port": 8000,
+		"protocol": "https",
+		"port": 9001,
 		"query": {
-			"path": "/query",
-			"method": "POST",
+			"path": "/secure/query",
+			"method": "GET",
 			"format": "JSON"
 		},
 		"update": {
-			"path": "/update",
+			"path": "/secure/update",
 			"method": "POST",
 			"format": "JSON"
 		}
 	},
 	"sparql11seprotocol": {
-		"protocol": "ws",
-		"reconnect" : true,
+		"protocol": "wss",
 		"availableProtocols": {
 			"ws": {
 				"port": 9000,
 				"path": "/subscribe"
 			},
 			"wss": {
-				"port": 9443,
+				"port": 9002,
 				"path": "/secure/subscribe"
 			}
 		}
 	},
-	"extended": {
+		"extended": {
 		"type": "basic",
 		"base": 0,
-		"clients": 2,
-		"messages": 5
+		"clients": 10,
+		"messages": 10
 	},
 	"graphs": {
 		"default-graph-uri": [

@@ -11,8 +11,10 @@ import it.unibo.arces.wot.sepa.commons.exceptions.SEPAPropertiesException;
 import it.unibo.arces.wot.sepa.commons.exceptions.SEPAProtocolException;
 import it.unibo.arces.wot.sepa.commons.exceptions.SEPASecurityException;
 
-public class ChatMonitor {
+public class ChatMonitor extends Thread {
 	protected static final Logger logger = LogManager.getLogger();
+
+	boolean allDone;
 
 	class UserMonitor {
 		private String user;
@@ -28,78 +30,110 @@ public class ChatMonitor {
 		public int removed = 0;
 		public boolean brokenConnectionRemover = false;
 		public boolean brokenConnectionReceiver = false;
-		
+
 		public String toString() {
-			return user + "|" + messages + "|" + received + "|" + sent + "|" + removed + "|" + brokenConnectionReceiver + "|" + brokenConnectionRemover;
+			return user + "|" + messages + "|" + received + "|" + sent + "|" + removed + "|" + brokenConnectionReceiver
+					+ "|" + brokenConnectionRemover;
 		}
 
 		public boolean allDone() {
-			return brokenConnectionRemover || brokenConnectionReceiver || ((sent == messages) && (received == messages) && (removed == messages));
+			return brokenConnectionRemover || brokenConnectionReceiver
+					|| ((sent == messages) && (received == messages) && (removed == messages));
 		}
 	}
 
 	private HashMap<String, UserMonitor> messageMap = new HashMap<>();
+
+	public void run() {
+		while (!allDone) {
+			try {
+				monitor();
+			} catch (InterruptedException e) {
+				return;
+			}
+//			for (UserMonitor mon : messageMap.values()) {
+//				logger.info(mon);
+//			}
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				return;
+			}
+		}
+	}
 
 	public ChatMonitor(Set<String> users, int messages) throws SEPAProtocolException, SEPAPropertiesException,
 			SEPASecurityException, SEPABindingsException, InterruptedException {
 
 		for (String user : users)
 			messageMap.put(user, new UserMonitor(user, messages * (users.size() - 1)));
-		
-		new Thread() {
-			public void run() {			
-				while(true) {
-					logger.info("****************************");
-					for (UserMonitor mon : messageMap.values()) {
-						logger.info(mon);
-					}
-					try {
-						Thread.sleep(5000);
-					} catch (InterruptedException e) {
-						return;
-					}
-				}
-			}
-		}.start();
+
+//		new Thread() {
+//			public void run() {
+//				while (!allDone) {
+//					logger.info("*******************************************************");
+//					logger.info("user|messages|received|sent|removed|brokenRec|brokenRem");
+//					logger.info("*******************************************************");
+//
+//					try {
+//						monitor();
+//					} catch (InterruptedException e) {
+//						return;
+//					}
+////					for (UserMonitor mon : messageMap.values()) {
+////						logger.info(mon);
+////					}
+////					try {
+////						Thread.sleep(5000);
+////					} catch (InterruptedException e) {
+////						return;
+////					}
+//				}
+//			}
+//		}.start();
 	}
 
-	public synchronized void monitor() throws InterruptedException {
-		boolean allDone;
-		do {
-			allDone = true;
-			for (UserMonitor mon : messageMap.values()) {
-				allDone = allDone && mon.allDone();
-				if (!allDone) {
-					wait();
-					break;
-				}
-			}
-		} while(!allDone);
+	private synchronized void monitor() throws InterruptedException {
+//		do {
+		logger.info("*******************************************************");
+		logger.info("user|messages|received|sent|removed|brokenRec|brokenRem");
+		logger.info("*******************************************************");
+		
+		allDone = true;
+		for (UserMonitor mon : messageMap.values()) {
+			logger.info(mon);
+			allDone = allDone && mon.allDone();
+		}
+//		} while(!allDone);
+//		logger.info("****************************");
+//		for (UserMonitor mon : messageMap.values()) {
+//			logger.info(mon);
+//		}
 	}
 
 	public synchronized void brokenConnectionReceiver(String user) {
 		messageMap.get(user).brokenConnectionReceiver = true;
-		notify();
+//		notify();
 	}
 
 	public synchronized void messageSent(String user) {
 		messageMap.get(user).sent++;
-		notify();
+//		notify();
 	}
 
 	public synchronized void messageReceived(String user) {
 		messageMap.get(user).received++;
-		notify();
+//		notify();
 	}
 
 	public synchronized void messageRemoved(String user) {
 		messageMap.get(user).removed++;
-		notify();
+//		notify();
 	}
 
 	public void brokenConnectionRemover(String user) {
 		messageMap.get(user).brokenConnectionRemover = true;
-		notify();
-		
+//		notify();
+
 	}
 }

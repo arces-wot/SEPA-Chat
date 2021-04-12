@@ -1,6 +1,4 @@
-package it.unibo.arces.wot.sepa.apps.chat;
-
-import static org.junit.Assert.assertFalse;
+package it.unibo.arces.wot.sepa.apps.chat.client;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,10 +6,13 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
-import it.unibo.arces.wot.sepa.apps.chat.client.BasicClient;
+import it.unibo.arces.wot.sepa.apps.chat.ChatClient;
+import it.unibo.arces.wot.sepa.apps.chat.ChatMonitor;
+import it.unibo.arces.wot.sepa.apps.chat.DeleteAll;
+import it.unibo.arces.wot.sepa.apps.chat.JSAPProvider;
+import it.unibo.arces.wot.sepa.apps.chat.UserRegistration;
+import it.unibo.arces.wot.sepa.apps.chat.Users;
 import it.unibo.arces.wot.sepa.commons.exceptions.SEPABindingsException;
 import it.unibo.arces.wot.sepa.commons.exceptions.SEPAPropertiesException;
 import it.unibo.arces.wot.sepa.commons.exceptions.SEPAProtocolException;
@@ -31,8 +32,12 @@ public class SEPAChatTest {
 
 	private static JSAPProvider cfg;
 
-	@BeforeClass
-	public static void init() throws SEPASecurityException, SEPAPropertiesException, SEPAProtocolException {
+	public static void main(String[] args) throws SEPASecurityException, SEPAPropertiesException, SEPAProtocolException, IOException, InterruptedException, SEPABindingsException {
+		init();	
+		basicChatTest();
+	}
+	
+	private static void init() throws SEPASecurityException, SEPAPropertiesException, SEPAProtocolException, IOException {
 		cfg = new JSAPProvider();
 
 		BASE = cfg.getJsap().getExtendedData().get("base").getAsInt();
@@ -45,8 +50,7 @@ public class SEPAChatTest {
 		users = new Users();
 	}
 
-	@Test // (timeout = 5000)
-	public void basicChatTest() throws SEPAProtocolException, SEPAPropertiesException, SEPASecurityException,
+	private static void basicChatTest() throws SEPAProtocolException, SEPAPropertiesException, SEPASecurityException,
 			InterruptedException, IOException, SEPABindingsException {
 
 		users.joinChat();
@@ -65,30 +69,26 @@ public class SEPAChatTest {
 		}
 		
 		monitor.join();
+		
+		System.exit(0);
 	}
 
 	private static void deleteAllClients()
-			throws SEPAProtocolException, SEPAPropertiesException, SEPASecurityException {
+			throws SEPAProtocolException, SEPAPropertiesException, SEPASecurityException, IOException {
 		DeleteAll client = new DeleteAll();
 		client.clean();
-		try {
-			client.close();
-		} catch (IOException e) {
-			assertFalse("deleteAllClients", true);
-		}
+
+		client.close();
 	}
 
-	private static void registerClients() throws SEPAProtocolException, SEPAPropertiesException, SEPASecurityException {
+	private static void registerClients() throws SEPAProtocolException, SEPAPropertiesException, SEPASecurityException, IOException {
 		// Register chat BOTS
 		UserRegistration registration = new UserRegistration();
 		for (int i = BASE; i < BASE + N_CLIENTS; i++) {
 			logger.info("Register client: "+"ChatBot" + i);
 			registration.register("ChatBot" + i);
 		}
-		try {
-			registration.close();
-		} catch (IOException e) {
-			assertFalse("registerClients", true);
-		}
+
+		registration.close();
 	}
 }

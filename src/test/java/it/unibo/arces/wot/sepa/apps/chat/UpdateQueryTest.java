@@ -32,6 +32,13 @@ public class UpdateQueryTest {
 	
 	private GenericClient client;
 	
+	private class Message {
+		public String sender;
+		public String receiver;
+		public String timeSent;
+		public String timeReceived;
+	};
+	
 	@BeforeClass
 	public static void init() throws SEPASecurityException, SEPAPropertiesException, SEPAProtocolException {
 		cfg = new JSAPProvider();
@@ -42,7 +49,7 @@ public class UpdateQueryTest {
 	//@Test(timeout = 5000)
 	@Test
 	public void test() throws SEPAProtocolException, SEPASecurityException, SEPAPropertiesException, IOException {
-		client = new GenericClient(cfg.getJsap(),cfg.getSecurityManager(),new BasicHandler());
+		client = new GenericClient(cfg.getJsap(),new BasicHandler());
 		
 		run();
 	}
@@ -60,22 +67,22 @@ public class UpdateQueryTest {
 		for (String receiver : users) send(users.get(0),receiver,"Message");
 		
 		// 2 - SENT
-		List<String> messages = new ArrayList<String>();
+		List<Message> messages = new ArrayList<Message>();
 		for (String receiver : users) {
-			List<String> msg = sent(receiver);
+			List<Message> msg = sent(receiver);
 			messages.addAll(msg);
 		}
 		
 		// 3 - SET RECEIVED
-		for(String message : messages) setReceived(message);
+		for(Message message : messages) setReceived(message);
 		
 		// 4 - RECEIVED
 		messages.clear();
-		List<String> msg = received(users.get(0));
+		List<Message> msg = received(users.get(0));
 		messages.addAll(msg);
 		
 		// 5 - REMOVE
-		for(String message : messages) remove(message);
+		for(Message message : messages) remove(message);
 	}
 
 	public void send(String sender, String receiver, String text) {
@@ -95,10 +102,12 @@ public class UpdateQueryTest {
 		logger.info("SEND "+(stop-start));
 	}
 
-	public void setReceived(String message) {
+	public void setReceived(Message m) {
 		Bindings bindings = new Bindings();
-		bindings.addBinding("message", new RDFTermURI(message));
-
+		bindings.addBinding("sender", new RDFTermURI(m.sender));
+		bindings.addBinding("receiver", new RDFTermURI(m.receiver));
+		bindings.addBinding("sentTime", new RDFTermLiteral(m.timeSent));
+		
 		long start = new Date().toInstant().toEpochMilli();
 		try {
 			client.update("SET_RECEIVED", bindings,cfg.getTimeout(),cfg.getNRetry());
@@ -110,9 +119,10 @@ public class UpdateQueryTest {
 		logger.info("SET_RECEIVED "+(stop-start));
 	}
 
-	public void remove(String message) {
+	public void remove(Message m) {
 		Bindings bindings = new Bindings();
-		bindings.addBinding("message", new RDFTermURI(message));
+		bindings.addBinding("sender", new RDFTermURI(m.sender));
+		bindings.addBinding("time", new RDFTermLiteral(m.timeReceived));
 		
 		long start = new Date().toInstant().toEpochMilli();
 		try {
@@ -136,7 +146,8 @@ public class UpdateQueryTest {
 	public void registerUser(String userName) {
 		Bindings bindings = new Bindings();
 		bindings.addBinding("userName", new RDFTermLiteral(userName));
-
+		bindings.addBinding("user", new RDFTermURI("http://wot.arces.unibo.it/chat/user/"+userName));
+		
 		try {
 			client.update("REGISTER_USER", bindings,cfg.getTimeout(),cfg.getNRetry()).isUpdateResponse();
 		} catch (SEPAProtocolException | SEPASecurityException | IOException | SEPAPropertiesException | SEPABindingsException e) {
@@ -144,11 +155,11 @@ public class UpdateQueryTest {
 		}
 	}
 
-	public List<String> sent(String receiver) {
+	public List<Message> sent(String receiver) {
 		Bindings bindings = new Bindings();
 		bindings.addBinding("receiver", new RDFTermURI(receiver));
 		
-		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<Message> list = new ArrayList<Message>();
 			
 		long start = new Date().toInstant().toEpochMilli();
 		Response ret;
@@ -166,17 +177,21 @@ public class UpdateQueryTest {
 		
 		QueryResponse results = (QueryResponse) ret;
 		for (Bindings result : results.getBindingsResults().getBindings()) {
-			list.add(result.getValue("message"));
+			Message m = new Message();
+			m.receiver = receiver;
+			m.sender = result.getValue("sender");
+			m.timeSent = result.getValue("time");
+			list.add(m);
 		}
 		
 		return list;
 	}
 
-	public List<String> received(String sender) {
+	public List<Message> received(String sender) {
 		Bindings bindings = new Bindings();
 		bindings.addBinding("sender", new RDFTermURI(sender));
 
-		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<Message> list = new ArrayList<Message>();
 
 		long start = new Date().toInstant().toEpochMilli();
 		Response ret;
@@ -194,7 +209,9 @@ public class UpdateQueryTest {
 		
 		QueryResponse results = (QueryResponse) ret;
 		for (Bindings result : results.getBindingsResults().getBindings()) {
-			list.add(result.getValue("message"));
+			Message m = new Message();
+			m.sender = sender;
+			m.timeReceived = result.getValue("time");
 		}
 		
 		return list;
