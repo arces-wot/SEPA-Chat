@@ -5,5 +5,10 @@
 /.classpath
 /.project
 /Presentazione1.pptx
+<<<<<<< HEAD
 /sepa.log.csv
 /endpoint.jpar
+=======
+/endpoint.jpar
+/sepa.log.csv
+>>>>>>> branch 'master' of https://github.com/arces-wot/SEPA-Chat.git

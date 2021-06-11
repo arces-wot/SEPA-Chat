@@ -1,5 +1,5 @@
 {
-	"host": "localhost",
+	"host": "arces143100.arces.unibo.it",
 	"oauth": {
 		"enable": true,
 		"ssl": "TLSv1.2",
@@ -12,8 +12,8 @@
 			"endpoint": "https://arces143100.arces.unibo.it:8443/auth/realms/sepa/protocol/openid-connect/token",
 			"client_id": "tlnpqpmL5GAoxCn/k+YEwQ==",
 			"client_secret": "1iESAnghkkWWipGJlCkjOGToKgfLjfrdeK1nqZlewopXftquvcutq0QRJGtP/+ba",
-			"jwt": "xabtQWoH8RJJk1FyKJ78J3jaFqpRDQjXEwGovBZ5+1k3fauyBMvMa0G6pVNKIgd3X8/QnOGAqsDwyDwwRyRHN05S3lwoPDTywhKaOZXCMBNnJPqpSaka84gJGfgC8ZM+W/W/gp1wTNu36ojD9hUpHlRfZra/QhOcc/xUkV3OJ4YFDGaRgocquma0fF0y2xwrtO0jDdE1N9nTpUhlaP/F8rXC0MFy3bVaWfWHIOxQBcx6vFCENz1/SWeNnKosswsGd+GjwowCkBg2sl+8cvFkrVJ21uRyzZOu/Pmn285PkXL06gewwGPl6gQeXSFyfomMFN3a65pjQyv1cuOZcwhbHseokPm53XYIyuLp7fWybnPEGIYsTTBMz8W5CWDFZPNgHHTMJcjHeQHjQJmxKwaqmKreQbjEYpC6fnmgwVSGVCX603ZYy9TgWuDapUoGvrqsLaGN+5yHnsBBI0g1Kc5UKpca/CZA/dDkOjte82HRz+6SnlSpHRPIu1+r9VFLgzAsgB6cVwoC25KiEnX207HcOQk3CBHxXhv9v3akyHqvrmiUWJJjM+Ed7fhxRkO1wK0l2oG78YxTurpl19e9+v4hT48VD9bHKCh9OhuUHpYtGZ1LyFuUKBlwrKUi8qrFPXpCw8+zn9z+QEaVsteEkSRZX4qB9B/RsqBckINJsnwr7SlhhP6cfMwbl0i8W15tRduGVYTIrX4x53+bKT7yh3q556OFNlCvTVrmvxSoJvmOYZiNc17+4z/McJSIzIbAhzjN6Wpe6BcU1iUzXgd170Us2zlqhsJ1BySUf58N6wBTzCQwRN652waqdCw8mOQ1J2FmD0z+ok3CZ9jKYUjDOKWFt+mOSNvF6Zpngg5BjPhUjC0yrOFzLYoZdX7REV/i3JEpHPKJE9hTfxovskjiHGPMcQL5X7NAGXZk0XkxXbecMatXXNQkwq+dq6zsHIPtlXrIEOQ16LooJ+HuRjFpr/e68WR2LSKRDf7xZuAaibdhKd886lh4FgseDWvb9Jib8wmaDhbebsFUW78XXPKxdJizg80y5UYkjOe13geqUldtKl11m0yjvffANBMEn7YqEg76vCQN3Vve9wjIa5ptiS5jZHISyldRWrLG+GMGMuO1yr3QiQMltREHniIGCbCd+x3XFT17srbBM8hYewzL/VSov4gUPXx0JxpVrbb5RH8fyvqkclIfAfZzJAaEa5Ya/1h21qGJVKWAM4lViHGlKXN0wCEvQOqtbp19EKOKL+ziWftJlVDByzw1nLRzlCHlzm1G0GHTN0jBeidmVeYKcKZPvbUU9GlqwLfWeb5OdqgFYJzWSN1vecffW+Wu47+tHaxhFXlcjlX7JjIdaOxUoPHjd46Jg+My98KRNSKCJc/3GwbxQau0PQqG5fCDqmf2uO0TRfFB2Zdh0pfrBqSOKygcZQ3s9pJsqUwHHNfj7giRAB2AfNQa+jSDvJQNNKIhusBJ3P6eM5z81WweQLw76e7E/PSrV/b4ocIPly6+1Pso6m6LxLkpxZqx9iniH+uRmm3aW+Lk20TjEMBhtgNHAX/3wXQ00Vp94G5J9fNMKRBaLJRgY2lBh+gj1jhibLUnA3sq/MaHkhvXIFm3YAigAGbtzZqg709tk9B3qMbTb+npFK6krC5uG2h0p8u/ngWzVoF0Xh8gIF/r3iKaAREibLB7fX/mC+S3/SkKAKd26AKUrIK5mWcztYwvCOoXOEykESSPWoyjLuqTN40Ni8lUFl2GhfXPwVdBGmtUVIAtwOiPMc9jDLHPdxEi0gX8cp/UgYmH30r8iTxk1cxA0B1snvP1b0rGFAFRnME6ADKeuyxnzxI=",
-			"expires": "d7U9rWAWhenY1m3k1tDsOA==",
+			"jwt": "xabtQWoH8RJJk1FyKJ78J3jaFqpRDQjXEwGovBZ5+1k3fauyBMvMa0G6pVNKIgd3X8/QnOGAqsDwyDwwRyRHN05S3lwoPDTywhKaOZXCMBNnJPqpSaka84gJGfgC8ZM+W/W/gp1wTNu36ojD9hUpHhDekbWMQ3NJs1jaHY8QbYBvt5o30k/BI8Pfjh8BkFO7eyr2AhUeS/FGR6Q0JX5qcanY1TPzo53j+kl7/u52NsZynz6790ek5BOmbKrJ3805S+zZ7LOn98c5w7lqHOcL/sNzE2kvLqDx6qmQsPqKl0P06gewwGPl6gQeXSFyfomMFN3a65pjQyv1cuOZcwhbHseokPm53XYIyuLp7fWybnPEGIYsTTBMz8W5CWDFZPNgHHTMJcjHeQHjQJmxKwaqmKreQbjEYpC6fnmgwVSGVCX603ZYy9TgWuDapUoGvrqsLaGN+5yHnsBBI0g1Kc5UKpca/CZA/dDkOjte82HRz+6SnlSpHRPIu1+r9VFLgzAsgB6cVwoC25KiEnX207HcOQk3CBHxXhv9v3akyHqvrmiUWJJjM+Ed7fhxRkO1wK0l2oG78YxTurpl19e9+v4hT+qVtxnpsqcvk3LvgfkCtn5AHzwQbKgKV6YYRXIecBQ655Ow+DuJ0OJ+aJ0MdDhD9RUwedTNfEFG9A/W4Y2yz91hhP6cfMwbl0i8W15tRduGVYTIrX4x53+bKT7yh3q556OFNlCvTVrmvxSoJvmOYZiNc17+4z/McJSIzIbAhzjN6Wpe6BcU1iUzXgd170Us2zlqhsJ1BySUf58N6wBTzCQwRN652waqdCw8mOQ1J2FmD0z+ok3CZ9jKYUjDOKWFt+mOSNvF6Zpngg5BjPhUjC0yrOFzLYoZdX7REV/i3JEpHPKJE9hTfxovskjiHGPMcQL5X7NAGXZk0XkxXbecMatXXNQkwq+dq6zsHIPtlXrIEOQ16LooJ+HuRjFpr/e68WR2LSKRDf7xZuAaibdhKd886lh4FgseDWvb9Jib8wmaDhbebsFUW78XXPKxdJizg80y5UYkjOe13geqUldtKl11m0yjvffANBMEn7YqEg76vCQN3Vve9wjIa5ptiS5jZHISyldRWrLG+GMGMuO1yr3QiQMltREHniIGCbCd+x3XFT17srbBM8hYewzL/VSov4gUPXx0JxpVrbb5RH8fyvqkclIfAfZzJAaEa5Ya/1h21qGJVKWAM4lViHGlKXN0wCEvQOqtbp19EKOKL+ziWftJlVDByzw1nLRzlCHlzm1G0GHTN0jBeidmVeYKcKZPvbUU9GlqwLfWeb5OdqgFYJzWSN1vecffW+Wu47+tHaxhFXlcjlX7JjIdaOxUoPHjd0Xj5i45fHHWALFNKmvtzY1Eo4YpgKuy5XJmev/if83B63L2QtzOdB8eC+5YwJOf8F8TxPSanXFCHYOiXO0k4lFfy2JbXg+7xSJY1aM71NxRhShc/xVe7ssfKTaGQk/KchJnGK/BHK66W//dxsyRwPB5QBxASSL/wxmfug2aUpoosIcpy/criyq9Q+0fhTr+sKaOYav18hHmkqT6OFJgTt0EsR8GhyRSEpLZU3zzmiIeh1jMaHIbXcVua6t/hugZuDGagIXSOlC+3GFyzaidWTsJ/81QjjrwmNiRbiJKqriEmR0WO8Z6dPJXa4ExYjy0t/IFEpVx0GbHSYk7cHQCRXhJLX9qlJ07H+lj7T/MUfM35temt4PW6fmXiVMIklbjs91uTF2DQ/5vPvde9uE74KQ1vv44sUyN1Fjf8D+17bTmR2pdqV6/irCLZj9woQFduPLU85Ll48h5dl+Vuar/wZE=",
+			"expires": "N6U25WgCWgYCjzKSem9Kaw==",
 			"type": "XPrHEX2xHy+5IuXHPHigMw=="
 		},
 		"provider": "keycloak"
@@ -45,7 +45,7 @@
 			}
 		}
 	},
-	"extended": {
+		"extended": {
 		"type": "basic",
 		"base": 0,
 		"clients": 10,
@@ -66,7 +66,7 @@
 	},
 	"updates": {
 		"SEND": {
-			"sparql": "INSERT {_:message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?time} WHERE {?sender rdf:type schema:Person . ?receiver rdf:type schema:Person BIND(STR(now()) AS ?time)}",
+			"sparql": "INSERT {graph <http://wot.arces.unibo.it/chat> {_:message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?time}} WHERE {?sender rdf:type schema:Person . ?receiver rdf:type schema:Person BIND(STR(now()) AS ?time)}",
 			"forcedBindings": {
 				"text": {
 					"type": "literal",
@@ -83,16 +83,24 @@
 			}
 		},
 		"SET_RECEIVED": {
-			"sparql": "INSERT {?message schema:dateReceived ?time} WHERE {?message rdf:type schema:Message BIND(STR(now()) AS ?time)}",
+			"sparql": "INSERT {graph <http://wot.arces.unibo.it/chat> {?message schema:dateReceived ?time}} WHERE {?message rdf:type schema:Message ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?sentTime .  BIND(STR(now()) AS ?time)}",
 			"forcedBindings": {
-				"message": {
+				"sender": {
 					"type": "uri",
-					"value": "chat:ThisIsAMessage"
+					"value": "chat:IamASender"
+				},
+				"receiver": {
+					"type": "uri",
+					"value": "chat:IamAReceiver"
+				},
+				"sentTime": {
+					"type": "literal",
+					"value": "2018-06-28T00:00:00"
 				}
 			}
 		},
 		"REMOVE": {
-			"sparql": "DELETE {?message ?p ?o} WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message ; ?p ?o}",
+			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?message ?p ?o}} WHERE {?message schema:sender ?sender ; schema:dateReceived ?time ; rdf:type schema:Message ; ?p ?o}",
 			"forcedBindings": {
 				"sender": {
 					"type": "uri",
@@ -105,7 +113,7 @@
 			}
 		},
 		"STORE_SENT": {
-			"sparql": "INSERT DATA {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}",
+			"sparql": "INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}}",
 			"forcedBindings": {
 				"dateSent": {
 					"type": "literal",
@@ -128,15 +136,10 @@
 					"type": "uri",
 					"value": "chat:IAmAReceiver"
 				}
-			},
-			"graphs": {
-				"using-graph-uri": [
-					"http://wot.arces.unibo.it/chat/log"
-				]
 			}
 		},
 		"STORE_RECEIVED": {
-			"sparql": "INSERT DATA {?message schema:dateReceived ?dateReceived}",
+			"sparql": "INSERT DATA {graph <http://wot.arces.unibo.it/chat/log> {?message schema:dateReceived ?dateReceived}}",
 			"forcedBindings": {
 				"dateReceived": {
 					"type": "literal",
@@ -147,24 +150,23 @@
 					"type": "uri",
 					"value": "chat:ThisIsAMessage"
 				}
-			},
-			"graphs": {
-				"using-graph-uri": [
-					"http://wot.arces.unibo.it/chat/log"
-				]
 			}
 		},
 		"REGISTER_USER": {
-			"sparql": "DELETE {?x rdf:type schema:Person . ?x schema:name ?userName} INSERT {_:id rdf:type schema:Person ; schema:name ?userName}  WHERE {OPTIONAL {?x rdf:type schema:Person . ?x schema:name ?userName}}",
+			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?x rdf:type schema:Person . ?x schema:name ?userName}} INSERT {graph <http://wot.arces.unibo.it/chat> {?user rdf:type schema:Person ; schema:name ?userName}}  WHERE {OPTIONAL {?x rdf:type schema:Person . ?x schema:name ?userName}}",
 			"forcedBindings": {
 				"userName": {
 					"type": "literal",
 					"value": "My user name"
+				},
+				"user": {
+					"type": "uri",
+					"value": "http://wot.arces.unibo.it/chat/user/XYZ"
 				}
 			}
 		},
 		"DELETE_ALL": {
-			"sparql": "DELETE {?s ?p ?o} WHERE {?s ?p ?o}"
+			"sparql": "DELETE {graph <http://wot.arces.unibo.it/chat> {?s ?p ?o}} WHERE {?s ?p ?o}"
 		}
 	},
 	"queries": {
@@ -190,7 +192,7 @@
 			"sparql": "SELECT ?message ?sender ?receiver ?text ?dateSent WHERE {?message schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?dateSent}",
 			"graphs": {
 				"default-graph-uri": [
-					"http://wot.arces.unibo.it/chat/log/"
+					"http://wot.arces.unibo.it/chat/log"
 				]
 			}
 		},
@@ -198,8 +200,7 @@
 			"sparql": "SELECT ?message ?dateReceived WHERE {?message schema:dateReceived ?dateReceived}",
 			"graphs": {
 				"default-graph-uri": [
-					"http://wot.arces.unibo.it/chat/log/"
-				]
+					"http://wot.arces.unibo.it/chat/log"]
 			}
 		},
 		"USERS": {

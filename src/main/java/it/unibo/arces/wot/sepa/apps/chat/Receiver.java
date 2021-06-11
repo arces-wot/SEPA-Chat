@@ -7,6 +7,7 @@ import it.unibo.arces.wot.sepa.commons.exceptions.SEPASecurityException;
 import it.unibo.arces.wot.sepa.commons.response.ErrorResponse;
 import it.unibo.arces.wot.sepa.commons.sparql.Bindings;
 import it.unibo.arces.wot.sepa.commons.sparql.BindingsResults;
+import it.unibo.arces.wot.sepa.commons.sparql.RDFTermLiteral;
 import it.unibo.arces.wot.sepa.commons.sparql.RDFTermURI;
 
 class Receiver extends ChatAggregator {
@@ -41,7 +42,9 @@ class Receiver extends ChatAggregator {
 			handler.onMessageReceived(userUri, bindings.getValue("message"), bindings.getValue("name"), bindings.getValue("text"),bindings.getValue("time"));
 			
 			try {
-				this.setUpdateBindingValue("message", new RDFTermURI(bindings.getValue("message")));
+				this.setUpdateBindingValue("receiver", new RDFTermURI(userUri));
+				this.setUpdateBindingValue("sender", new RDFTermURI(bindings.getValue("sender")));
+				this.setUpdateBindingValue("sentTime", new RDFTermLiteral(bindings.getValue("time")));
 				update();
 				
 			} catch (SEPASecurityException | SEPAProtocolException | SEPAPropertiesException | SEPABindingsException e) {

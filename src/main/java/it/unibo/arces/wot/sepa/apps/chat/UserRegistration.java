@@ -9,6 +9,7 @@ import it.unibo.arces.wot.sepa.commons.exceptions.SEPAPropertiesException;
 import it.unibo.arces.wot.sepa.commons.exceptions.SEPAProtocolException;
 import it.unibo.arces.wot.sepa.commons.exceptions.SEPASecurityException;
 import it.unibo.arces.wot.sepa.commons.sparql.RDFTermLiteral;
+import it.unibo.arces.wot.sepa.commons.sparql.RDFTermURI;
 import it.unibo.arces.wot.sepa.pattern.Producer;
 
 public class UserRegistration extends Producer {
@@ -23,6 +24,7 @@ public class UserRegistration extends Producer {
 		
 		try {
 			this.setUpdateBindingValue("userName", new RDFTermLiteral(userName));
+			this.setUpdateBindingValue("user", new RDFTermURI("http://wot.arces.unibo.it/chat/user/"+userName));
 			
 			update();
 		} catch (SEPASecurityException | SEPAProtocolException | SEPAPropertiesException | SEPABindingsException e) {
