@@ -24,7 +24,7 @@ public class Users extends Consumer {
 	private boolean usersRetrieved = false;
 
 	public Users() throws SEPAProtocolException, SEPAPropertiesException, SEPASecurityException {
-		super(new JSAPProvider().getJsap(), "USERS",new JSAPProvider().getSecurityManager());
+		super(new JSAPProvider().getJsap(), "USERS");
 	}
 
 	public void joinChat() throws SEPASecurityException, IOException, SEPAPropertiesException, SEPAProtocolException, InterruptedException, SEPABindingsException {

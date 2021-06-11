@@ -48,7 +48,7 @@ public class JSAPProvider {
 			logger.error("File not found: " + path);
 			throw new SEPASecurityException("File not found: "+path);
 		}
-		return new ClientSecurityManager(appProfile.getAuthenticationProperties(),f.getPath(), "sepa2017");
+		return new ClientSecurityManager(appProfile.getAuthenticationProperties());
 	}
 	
 	public JSAP getJsap() {

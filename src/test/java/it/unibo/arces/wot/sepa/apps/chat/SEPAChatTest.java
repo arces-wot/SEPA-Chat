@@ -20,9 +20,9 @@ import it.unibo.arces.wot.sepa.commons.exceptions.SEPASecurityException;
 public class SEPAChatTest {
 	private static final Logger logger = LogManager.getLogger();
 	
-	private static int N_CLIENTS = 10;
+	private static int N_CLIENTS = 2;
 	private static int BASE = 0;
-	private static int MESSAGES = 10;
+	private static int MESSAGES = 1;
 
 	private static Users users;
 	private static List<ChatClient> clients = new ArrayList<ChatClient>();
@@ -52,6 +52,7 @@ public class SEPAChatTest {
 		users.joinChat();
 		
 		monitor = new ChatMonitor(users.getUsers(), MESSAGES);
+		monitor.start();
 		
 		for (String user : users.getUsers()) {
 			ChatClient client = new BasicClient(user, users, MESSAGES,monitor);
@@ -63,7 +64,7 @@ public class SEPAChatTest {
 			th.start();
 		}
 		
-		monitor.monitor();
+		monitor.join();
 	}
 
 	private static void deleteAllClients()

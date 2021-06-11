@@ -20,7 +20,7 @@ public abstract class ChatAggregator extends Aggregator {
 	
 	public ChatAggregator(String subscribeID, String updateID)
 			throws SEPAProtocolException, SEPASecurityException, SEPAPropertiesException {
-		super(new JSAPProvider().getJsap(), subscribeID, updateID,new JSAPProvider().getSecurityManager());
+		super(new JSAPProvider().getJsap(), subscribeID, updateID);
 	}
 
 	public void joinChat() throws SEPASecurityException, SEPAPropertiesException, SEPAProtocolException,

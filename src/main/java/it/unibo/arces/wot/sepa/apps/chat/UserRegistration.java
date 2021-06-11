@@ -15,7 +15,7 @@ public class UserRegistration extends Producer {
 	private static final Logger logger = LogManager.getLogger();
 	
 	public UserRegistration() throws SEPAProtocolException, SEPAPropertiesException, SEPASecurityException {
-		super(new JSAPProvider().getJsap(), "REGISTER_USER",new JSAPProvider().getSecurityManager());
+		super(new JSAPProvider().getJsap(), "REGISTER_USER");
 	}
 	
 	public void register(String userName) {
