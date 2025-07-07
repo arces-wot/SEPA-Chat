@@ -52,7 +52,7 @@
 	},
 	"updates": {
 		"SEND": {
-			"sparql": "INSERT {GRAPH <http://wot.arces.unibo.it/chat> {?message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver; schema:dateSent ?time}} WHERE {GRAPH <http://wot.arces.unibo.it/chat> {?sender rdf:type schema:Person . ?receiver rdf:type schema:Person BIND(STR(now()) AS ?time) BIND(UUID() As ?message)}}",
+			"sparql": "INSERT {GRAPH <http://wot.arces.unibo.it/chat> {?message rdf:type schema:Message ; schema:text ?text ; schema:sender ?sender ; schema:toRecipient ?receiver ; schema:dateSent ?time}} WHERE {GRAPH <http://wot.arces.unibo.it/chat> {?sender rdf:type schema:Person . ?receiver rdf:type schema:Person BIND(STR(now()) AS ?time) BIND(UUID() As ?message)}}",
 			"forcedBindings": {
 				"text": {
 					"type": "literal",

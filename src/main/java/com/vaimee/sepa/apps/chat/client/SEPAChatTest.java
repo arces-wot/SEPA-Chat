@@ -13,10 +13,10 @@ import com.vaimee.sepa.apps.chat.DeleteAll;
 import com.vaimee.sepa.apps.chat.JSAPProvider;
 import com.vaimee.sepa.apps.chat.UserRegistration;
 import com.vaimee.sepa.apps.chat.Users;
-import com.vaimee.sepa.commons.exceptions.SEPABindingsException;
-import com.vaimee.sepa.commons.exceptions.SEPAPropertiesException;
-import com.vaimee.sepa.commons.exceptions.SEPAProtocolException;
-import com.vaimee.sepa.commons.exceptions.SEPASecurityException;
+import com.vaimee.sepa.api.commons.exceptions.SEPABindingsException;
+import com.vaimee.sepa.api.commons.exceptions.SEPAPropertiesException;
+import com.vaimee.sepa.api.commons.exceptions.SEPAProtocolException;
+import com.vaimee.sepa.api.commons.exceptions.SEPASecurityException;
 
 public class SEPAChatTest {
 	private static final Logger logger = LogManager.getLogger();

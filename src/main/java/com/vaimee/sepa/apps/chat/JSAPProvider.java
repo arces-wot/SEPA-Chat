@@ -1,9 +1,9 @@
 package com.vaimee.sepa.apps.chat;
 
-import com.vaimee.sepa.commons.exceptions.SEPAPropertiesException;
-import com.vaimee.sepa.commons.exceptions.SEPASecurityException;
-import com.vaimee.sepa.commons.security.ClientSecurityManager;
-import com.vaimee.sepa.pattern.JSAP;
+import com.vaimee.sepa.api.commons.exceptions.SEPAPropertiesException;
+import com.vaimee.sepa.api.commons.exceptions.SEPASecurityException;
+import com.vaimee.sepa.api.commons.security.ClientSecurityManager;
+import com.vaimee.sepa.api.pattern.JSAP;
 
 import java.io.File;
 

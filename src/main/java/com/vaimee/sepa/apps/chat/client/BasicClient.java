@@ -8,10 +8,10 @@ import org.apache.logging.log4j.Logger;
 import com.vaimee.sepa.apps.chat.ChatClient;
 import com.vaimee.sepa.apps.chat.ChatMonitor;
 import com.vaimee.sepa.apps.chat.Users;
-import com.vaimee.sepa.commons.exceptions.SEPABindingsException;
-import com.vaimee.sepa.commons.exceptions.SEPAPropertiesException;
-import com.vaimee.sepa.commons.exceptions.SEPAProtocolException;
-import com.vaimee.sepa.commons.exceptions.SEPASecurityException;
+import com.vaimee.sepa.api.commons.exceptions.SEPABindingsException;
+import com.vaimee.sepa.api.commons.exceptions.SEPAPropertiesException;
+import com.vaimee.sepa.api.commons.exceptions.SEPAProtocolException;
+import com.vaimee.sepa.api.commons.exceptions.SEPASecurityException;
 
 public class BasicClient extends ChatClient {
 	private static final Logger logger = LogManager.getLogger();

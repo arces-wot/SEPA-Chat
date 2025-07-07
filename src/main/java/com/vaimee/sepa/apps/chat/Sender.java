@@ -3,13 +3,13 @@ package com.vaimee.sepa.apps.chat;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.vaimee.sepa.commons.exceptions.SEPABindingsException;
-import com.vaimee.sepa.commons.exceptions.SEPAPropertiesException;
-import com.vaimee.sepa.commons.exceptions.SEPAProtocolException;
-import com.vaimee.sepa.commons.exceptions.SEPASecurityException;
-import com.vaimee.sepa.commons.sparql.RDFTermLiteral;
-import com.vaimee.sepa.commons.sparql.RDFTermURI;
-import com.vaimee.sepa.pattern.Producer;
+import com.vaimee.sepa.api.commons.exceptions.SEPABindingsException;
+import com.vaimee.sepa.api.commons.exceptions.SEPAPropertiesException;
+import com.vaimee.sepa.api.commons.exceptions.SEPAProtocolException;
+import com.vaimee.sepa.api.commons.exceptions.SEPASecurityException;
+import com.vaimee.sepa.api.commons.sparql.RDFTermLiteral;
+import com.vaimee.sepa.api.commons.sparql.RDFTermURI;
+import com.vaimee.sepa.api.pattern.Producer;
 
 class Sender extends Producer {
 	protected static final Logger logger = LogManager.getLogger();
