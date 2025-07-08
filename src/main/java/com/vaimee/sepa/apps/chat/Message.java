@@ -9,7 +9,7 @@ class Message {
 	
 	/**
 	 * Represent a chat message
-	 * 
+	 * <p>
 	 * */
 	public Message(String msg, String from,String to,String text,String time) {
 		this.msg = msg;
